@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple Express server yang log semua request dan selalu balas 200",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
