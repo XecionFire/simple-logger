@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.all('*', (req, res) => {
   // Bisa custom response body kalau mau
   console.log('┌───────────────────────────────────────────────────────');
-  console.log(`│ 
+  console.log(`│ Request diterima`);
   console.log('├───────────────────────────────────────────────────────');
   console.log(`│ Method   : ${req.method}`);
   console.log(`│ Path     : ${req.path}`);
