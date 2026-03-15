@@ -35,7 +35,6 @@ app.all('*', (req, res) => {
   console.log(`│ Query    :`, req.query);
   console.log(`│ Body     :`, req.body || '(kosong)');
   // console.log(`│ Headers  :`, req.headers);
-  console.log('└───────────────────────────────────────────────────────\n');
   res.status(200).json({
     status: 'success',
     message: 'Request diterima dan dicatat di console',
