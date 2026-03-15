@@ -6,15 +6,15 @@ const port = 3000;
 app.use((req, res, next) => {
   const timestamp = new Date().toISOString();
   
-  console.log('┌───────────────────────────────────────────────────────');
-  console.log(`│ Request diterima ${timestamp}`);
-  console.log('├───────────────────────────────────────────────────────');
-  console.log(`│ Method   : ${req.method}`);
-  console.log(`│ Path     : ${req.path}`);
-  console.log(`│ Query    :`, req.query);
-  console.log(`│ Body     :`, req.body || '(kosong)');
-  console.log(`│ Headers  :`, req.headers);
-  console.log('└───────────────────────────────────────────────────────\n');
+  // console.log('┌───────────────────────────────────────────────────────');
+  // console.log(`│ Request diterima ${timestamp}`);
+  // console.log('├───────────────────────────────────────────────────────');
+  // console.log(`│ Method   : ${req.method}`);
+  // console.log(`│ Path     : ${req.path}`);
+  // console.log(`│ Query    :`, req.query);
+  // console.log(`│ Body     :`, req.body || '(kosong)');
+  // console.log(`│ Headers  :`, req.headers);
+  // console.log('└───────────────────────────────────────────────────────\n');
 
   // Lanjut ke handler berikutnya
   next();
@@ -27,6 +27,15 @@ app.use(express.urlencoded({ extended: true }));
 // Catch-all route → semua method + semua path
 app.all('*', (req, res) => {
   // Bisa custom response body kalau mau
+  console.log('┌───────────────────────────────────────────────────────');
+  console.log(`│ Request diterima ${timestamp}`);
+  console.log('├───────────────────────────────────────────────────────');
+  console.log(`│ Method   : ${req.method}`);
+  console.log(`│ Path     : ${req.path}`);
+  console.log(`│ Query    :`, req.query);
+  console.log(`│ Body     :`, req.body || '(kosong)');
+  // console.log(`│ Headers  :`, req.headers);
+  console.log('└───────────────────────────────────────────────────────\n');
   res.status(200).json({
     status: 'success',
     message: 'Request diterima dan dicatat di console',
